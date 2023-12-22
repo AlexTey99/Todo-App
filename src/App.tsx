@@ -8,7 +8,7 @@ const App = () => {
         <img className="rotate" src={logo} alt="" />
       </div>
       <div className="react-container__content">
-        <h3>Edit src/App.tsx and save to reload</h3>
+        <h3>Hola mundo</h3>
       </div>
       <div className="react-container__footer">
         <a href="https://reactjs.org/docs/getting-started.html">Learn React</a>
