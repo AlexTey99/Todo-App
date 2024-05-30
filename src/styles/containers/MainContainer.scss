@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+@import '../colors/all.scss';
+
+
+.main-container{
+    display: flex;
+    height: 100vh;
+    background: $Very-Dark-Blue;
+    
+
+    .imgFondo{
+        height: 40%;
+        width: 100%;
+    }
+}

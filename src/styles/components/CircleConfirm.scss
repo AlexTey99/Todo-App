@@ -1,0 +1,40 @@
+@import '../colors/all.scss';
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.circle.checked {
+    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+
+
+#div-input-value.underline > *:not(.circle):not(.checked) {
+    text-decoration: line-through;
+    color: $Dark-Grayish-Blue;
+}
+
+
+.checkmark {
+    position: relative;
+    top: 40%;
+    left: 12px;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.circle.checked .checkmark {
+    display: block;
+}
+
+.cruz{
+    position: relative;
+    left: 464px;
+    cursor: pointer;
+}
