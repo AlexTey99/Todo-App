@@ -53,17 +53,16 @@ const ContainerCenter = () => {
             <div className="lista-todos">
                 {todos.map((todo, index) => (
                     <div key={index} className="todo-item">
-                        <div id='div-input-value' className={`div-input-value ${checkedTodos.has(index) ? 'underline' : ''}`}>
-                            <div 
-                                id='circle' 
-                                className={`circle ${checkedTodos.has(index) ? 'checked' : ''}`} 
-                                onClick={() => toggleCheck(index)}
-                            > 
-                                <span className="checkmark">✔</span>
-                            </div>
-                            
+                        <div id='div-input-value' className={'div-input-value'}>
+                        <div 
+                            id='circle' 
+                            className={`circle ${checkedTodos.has(index) ? 'checked' : ''}`} 
+                            onClick={() => toggleCheck(index)}
+                            >
+                            <span className="checkmark">✔</span>
+                        </div>
                             <img src={cruz} className='cruz' alt="Eliminar Todo" />
-                            {todo}
+                            <p className={`todoItem ${checkedTodos.has(index) ? 'underline' : ''}`}>{todo}</p>
                         </div>
                     </div>
                 ))}

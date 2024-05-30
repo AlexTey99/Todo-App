@@ -14,15 +14,15 @@
 }
 
 
-
-#div-input-value.underline > *:not(.circle):not(.checked) {
+.todoItem.underline{
     text-decoration: line-through;
     color: $Dark-Grayish-Blue;
-};
+}
 
 
 .checkmark {
     position: relative;
+    color: $Very-Light-Gray;
     top: 40%;
     left: 12px;
     transform: translate(-50%, -50%);
