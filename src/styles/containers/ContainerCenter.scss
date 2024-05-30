@@ -13,7 +13,7 @@
     .lista-todos{
         height: 100%;
         overflow-y: auto;
-
+        background: $Very-Dark-Desaturated-Blue;
     }
     
 
@@ -36,9 +36,9 @@
 
     .div-input-value{
         display: flex;
+        align-items: center;
         color: $Light-Grayish-Blue-hover;
-        height: 50px;
-        padding: 14px;
+        padding: 14px 32px 14px 10px;
         border: 1px solid $Very-Dark-Blue;
         background: $Very-Dark-Desaturated-Blue;
         

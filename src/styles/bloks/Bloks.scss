@@ -1,0 +1,43 @@
+@import '../colors/all.scss';
+
+.UltimetElements{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid $Very-Dark-Blue;
+    background: $Very-Dark-Desaturated-Blue;
+
+    div{
+        display: flex;
+        color: $Dark-Grayish-Blue;
+        font-size: 12px;
+
+        p{
+            margin-right: 6px;
+        }
+    }
+
+    .other-options{
+
+        p{
+            margin-left: 10px;
+        }
+
+        .all:hover{
+            cursor: pointer;
+            color: $blue;
+        }
+    }
+
+    .active:hover{
+        color: $Light-Grayish-Blue-hover;
+    }
+
+    .clear-complete:hover{
+        color: $Light-Grayish-Blue-hover;
+        cursor: pointer;
+    }
+    
+        
+    
+}
