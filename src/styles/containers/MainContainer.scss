@@ -10,11 +10,15 @@
 
 .main-container{
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     background: $Very-Dark-Blue;
     
 
     .imgFondo{
+        position: absolute;
+        top: 0;
         height: 40%;
         width: 100%;
     }
