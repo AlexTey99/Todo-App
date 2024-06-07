@@ -50,7 +50,7 @@ const ContainerCenter = () => {
         const element = document.querySelector(".lista-todos");
         if (element) {
           // Selecciona todos los divs anidados dentro del elemento principal
-          const childDivs = element.querySelectorAll('div');
+          const childDivs = element.querySelectorAll('.underline');
           // Elimina cada div anidado
           childDivs.forEach(child => child.remove());
         }
@@ -122,7 +122,7 @@ const ContainerCenter = () => {
             <div ref={containerRef} className="lista-todos">
                 {todos.map((todo, index) => (
                     <div key={index} className="todo-item">
-                             <div id='div-input-value' className={'div-input-value'}>
+                             <div id='div-input-value' className={`div-input-value ${checkedTodos.has(index) ? 'underline' : ''}`}>
                              <div>
                                  <div 
                                  id='circle' 
