@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 //@ts-ignore
 import imgLogoSol from '../assets/images/icon-sun.svg';
 //@ts-ignore
 import cruz from '../assets/images/icon-cross.svg';
 import { InputTodo } from '../components/input';
-import UltimetElements from '../bloks/UltimetElements';
+import {UltimetElements} from '../bloks/UltimetElements';
 
 const ContainerCenter = () => {
 
     const [valueInput, setValueInput] = useState('');
     const [todos, setTodos] = useState([]);
-    const [showDivs, setShowDivs] = useState(['']);
     const [checkedTodos, setCheckedTodos] = useState(new Set());
+    const [divCount, setDivCount] = useState(0);
+
+    const containerRef = useRef<HTMLDivElement>(null); 
+    let numeIncrementor = divCount;
 
     const handleChange = (event) => {
         setValueInput(event.target.value);
@@ -52,8 +55,50 @@ const ContainerCenter = () => {
           childDivs.forEach(child => child.remove());
         }
     };
-    
 
+
+    let filteredDivs=[];
+  // useEffect se ejecuta después de que el componente se ha montado
+  useEffect(() => {
+    
+    // Función para contar los divs hijos
+    const countDivs = () => {
+      if (containerRef.current) {
+        // Obtener todos los divs dentro del contenedor
+        const allDivs = containerRef.current.querySelectorAll('.circle');
+
+        // Filtrar los divs que no tienen la clase "circle checked"
+         filteredDivs = Array.from(allDivs).filter((div: HTMLDivElement) => !(div.classList.contains("circle") && div.classList.contains("checked")));
+
+        // Contar los divs filtrados
+        const divsCountWithoutClass = filteredDivs.length;
+
+        // Actualizar el estado con el número de divs sin la clase
+        setDivCount(divsCountWithoutClass);
+      }
+    };
+
+    // Crear un MutationObserver para observar cambios en el contenedor
+    const observer = new MutationObserver(() => {
+      countDivs();
+    });
+
+    // Configurar el MutationObserver para observar hijos añadidos/eliminados
+    if (containerRef.current) {
+      observer.observe(containerRef.current, {
+        childList: true,
+      });
+
+      // Contar los divs inicialmente
+      countDivs();
+    }
+
+    // Limpiar el observer cuando el componente se desmonta
+    return () => {
+      observer.disconnect();
+    };
+  }, [filteredDivs]);
+    
     
 
     
@@ -74,7 +119,7 @@ const ContainerCenter = () => {
                 />
             </form>
             
-            <div className="lista-todos">
+            <div ref={containerRef} className="lista-todos">
                 {todos.map((todo, index) => (
                     <div key={index} className="todo-item">
                              <div id='div-input-value' className={'div-input-value'}>
@@ -94,7 +139,7 @@ const ContainerCenter = () => {
                     </div>
                 ))}
             </div>
-                <UltimetElements deleteAllTodo={deleteTodo} />
+                <UltimetElements nume={numeIncrementor} deleteAllTodo={deleteTodo} />
         </div>
     );
 };

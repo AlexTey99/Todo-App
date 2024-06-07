@@ -2,11 +2,11 @@ import React from 'react'
 
 
 
-const UltimetElements = ({deleteAllTodo}) => {
+export const UltimetElements = ({deleteAllTodo, nume}) => {
   return (
     <div className='UltimetElements'>
         <div className='item-counter'>
-            <p>0</p>
+            <p>{nume}</p>
             <p>items left</p>
         </div>
         <div className='other-options'>
@@ -21,5 +21,3 @@ const UltimetElements = ({deleteAllTodo}) => {
     </div>
   )
 }
-
-export default UltimetElements
