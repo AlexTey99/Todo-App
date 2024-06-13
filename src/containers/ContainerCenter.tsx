@@ -101,13 +101,21 @@ export const ContainerCenter = () => {
       observer.disconnect();
     };
   }, [filteredDivs]);
+
+  
+
+  const [changeColor, setChangeColor] = useState(true)
+
+  const configureColors=()=>{
+    setChangeColor(!changeColor)
+  }
     
 
     return (
         <div className='container-center'>
             <div className="component-todo">
                 <h1 className="todo">TODO</h1>
-                <img className="imgLogoSol" src={imgLogoSol} alt="Logo Sol" />
+                <img className="imgLogoSol" onClick={configureColors} src={imgLogoSol} alt="Logo Sol" />
             </div>
             <form onSubmit={handleSubmit}>
                 <InputTodo 
@@ -116,13 +124,14 @@ export const ContainerCenter = () => {
                     value={valueInput} 
                     onChange={handleChange} 
                     placeholder='Create a new Todo' 
+                    className={changeColor ? 'veryDark' : 'white'}
                 />
             </form>
             
-            <div ref={containerRef} className="lista-todos">
+            <div ref={containerRef} className={`lista-todos ${changeColor ? 'veryDark' : 'white'}`}>
                 {todos.map((todo, index) => (
                     <div key={index} className="todo-item">
-                             <div id='div-input-value' className={`div-input-value ${checkedTodos.has(index) ? 'underline' : ''}`}>
+                             <div id='div-input-value' className={`div-input-value ${checkedTodos.has(index) ? 'underline' : ''} ${changeColor ? 'veryDark' : 'white'}`}>
                              <div>
                                  <div 
                                  id='circle' 
@@ -139,7 +148,7 @@ export const ContainerCenter = () => {
                     </div>
                 ))}
             </div>
-                <UltimetElements nume={numeIncrementor} deleteAllTodo={deleteTodo} />
+                <UltimetElements nume={numeIncrementor} deleteAllTodo={deleteTodo} prop={changeColor}/>
         </div>
     );
 };

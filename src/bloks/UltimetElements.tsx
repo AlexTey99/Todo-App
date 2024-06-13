@@ -1,7 +1,10 @@
 
-export const UltimetElements = ({deleteAllTodo, nume}) => {
+
+
+
+export const UltimetElements = ({deleteAllTodo, nume,prop}) => {
   return (
-    <div className='UltimetElements'>
+    <div className={`UltimetElements ${prop ? 'veryDark' : 'white'}`}>
         <div className='item-counter'>
             <p>{nume}</p>
             <p>items left</p>

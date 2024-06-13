@@ -3,8 +3,9 @@ import { ContainerCenter } from "./ContainerCenter";
 import imgFondo from '../assets/images/bg-desktop-dark.jpg'
 
 export const MainContainer = () => {
+
     return (
-        <div className='main-container '>
+        <div className='main-container'>
             <img className = 'imgFondo' src={imgFondo} alt="" />
             <ContainerCenter/>  
         </div>
