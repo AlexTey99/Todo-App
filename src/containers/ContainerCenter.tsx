@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 //@ts-ignore
 import imgLogoSol from '../assets/images/icon-sun.svg';
 //@ts-ignore
@@ -6,7 +6,10 @@ import cruz from '../assets/images/icon-cross.svg';
 import { InputTodo } from '../components/input';
 import {UltimetElements} from '../bloks/UltimetElements';
 
-const ContainerCenter = () => {
+
+
+
+export const ContainerCenter = () => {
 
     const [valueInput, setValueInput] = useState('');
     const [todos, setTodos] = useState([]);
@@ -99,12 +102,9 @@ const ContainerCenter = () => {
     };
   }, [filteredDivs]);
     
-    
-
-    
 
     return (
-        <div className="container-center">
+        <div className='container-center'>
             <div className="component-todo">
                 <h1 className="todo">TODO</h1>
                 <img className="imgLogoSol" src={imgLogoSol} alt="Logo Sol" />
@@ -143,5 +143,5 @@ const ContainerCenter = () => {
         </div>
     );
 };
-
-export { ContainerCenter };
+// Verifica cómo estás exportando el componente
+export default ContainerCenter
