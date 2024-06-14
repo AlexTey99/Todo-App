@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    border: 1px solid $Very-Dark-Blue;
+    border: 1px solid $Very-Dark-Grayish-Bluee;
 
     div{
         display: flex;
@@ -28,14 +28,9 @@
         }
     }
 
-    .active:hover{
-        color: $Light-Grayish-Blue-hover;
-    }
+    
 
-    .clear-complete:hover{
-        color: $Light-Grayish-Blue-hover;
-        cursor: pointer;
-    }
+    
     
         
     

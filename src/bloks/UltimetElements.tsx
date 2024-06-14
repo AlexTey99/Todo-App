@@ -2,7 +2,7 @@
 
 
 
-export const UltimetElements = ({deleteAllTodo, nume,prop}) => {
+export const UltimetElements = ({deleteAllTodo, nume, prop}) => {
   return (
     <div className={`UltimetElements ${prop ? 'veryDark' : 'white'}`}>
         <div className='item-counter'>
@@ -10,12 +10,12 @@ export const UltimetElements = ({deleteAllTodo, nume,prop}) => {
             <p>items left</p>
         </div>
         <div className='other-options'>
-            <p className='all'>All</p>
-            <p className='active'>Active</p>
+            <p className="all">All</p>
+            <p className={`active ${prop ? 'veryDarkColor' : 'whiteColor'}`}>Active</p>
             <p className='complete'>Complete</p>
         </div>
         <div>
-            <p className='clear-complete' onClick={deleteAllTodo}>Clear Complete</p>
+            <p className={`clear-complete ${prop ? 'veryDarkColor' : 'whiteColor'}`} onClick={deleteAllTodo}>Clear Complete</p>
         </div>
       
     </div>

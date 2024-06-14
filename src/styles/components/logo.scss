@@ -8,3 +8,13 @@
     background-color: $Very-Dark-Desaturated-Blue;
     color: white;
 }
+
+.veryDarkColor:hover{
+    color:  $Very-Light-Grayish-Blue;
+    cursor: pointer;
+}
+
+.whiteColor:hover{
+    color: $Very-Dark-Desaturated-Blue;
+    cursor: pointer;
+}

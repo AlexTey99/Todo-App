@@ -9,12 +9,13 @@ import {UltimetElements} from '../bloks/UltimetElements';
 
 
 
-export const ContainerCenter = () => {
+export const ContainerCenter = ({setMensaje}) => {
 
     const [valueInput, setValueInput] = useState('');
     const [todos, setTodos] = useState([]);
     const [checkedTodos, setCheckedTodos] = useState(new Set());
     const [divCount, setDivCount] = useState(0);
+    const [changeColor, setChangeColor] = useState(true);
 
     const containerRef = useRef<HTMLDivElement>(null); 
     let numeIncrementor = divCount;
@@ -101,13 +102,11 @@ export const ContainerCenter = () => {
       observer.disconnect();
     };
   }, [filteredDivs]);
-
   
-
-  const [changeColor, setChangeColor] = useState(true)
-
+  // Cambio de colores al precionar el icono del sol
   const configureColors=()=>{
-    setChangeColor(!changeColor)
+    setChangeColor(!changeColor);
+    setMensaje(!changeColor);
   }
     
 
