@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 //@ts-ignore
 import imgLogoSol from '../assets/images/icon-sun.svg';
 //@ts-ignore
+import imgMoon from '../assets/images/icon-moon.svg';
+//@ts-ignore
 import cruz from '../assets/images/icon-cross.svg';
 import { InputTodo } from '../components/input';
 import {UltimetElements} from '../bloks/UltimetElements';
@@ -108,13 +110,15 @@ export const ContainerCenter = ({setMensaje}) => {
     setChangeColor(!changeColor);
     setMensaje(!changeColor);
   }
+
     
 
     return (
         <div className='container-center'>
             <div className="component-todo">
                 <h1 className="todo">TODO</h1>
-                <img className="imgLogoSol" onClick={configureColors} src={imgLogoSol} alt="Logo Sol" />
+                <img className={`imgMoon ${changeColor ? 'displayNone' : 'displayFlex'}`} src={imgMoon} onClick={configureColors} alt="Logo luna" />
+                <img className={`imgLogoSol ${changeColor ? 'displayFlex' : 'displayNone'}`} onClick={configureColors} src={imgLogoSol} alt="Logo Sol" />
             </div>
             <form onSubmit={handleSubmit}>
                 <InputTodo 
