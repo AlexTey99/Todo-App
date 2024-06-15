@@ -9,7 +9,6 @@
     width: 540px;
     box-shadow: black 0px 50px 100px -80px;
 
-    
 
     .lista-todos{
         height: 100%;
@@ -47,9 +46,11 @@
         padding: 14px 32px 14px 10px;
         border: 1px solid $Very-Dark-Grayish-Bluee; 
     }
+  
+}
 
-
-    
-
-    
+@media screen and (max-width: 375px){
+    .container-center{
+        width: 340px;
+    }
 }

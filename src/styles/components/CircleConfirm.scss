@@ -38,3 +38,9 @@
     left: 470px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 375px){
+    .cruz{
+        left: 270px;
+    }
+}
